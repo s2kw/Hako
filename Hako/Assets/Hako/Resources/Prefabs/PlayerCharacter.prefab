@@ -312,8 +312,6 @@ GameObject:
   - 95: {fileID: 9556622}
   - 143: {fileID: 14346406}
   - 114: {fileID: 11494878}
-  - 54: {fileID: 5417334}
-  - 136: {fileID: 13679298}
   m_Layer: 0
   m_Name: PlayerCharacter
   m_TagString: Player
@@ -509,7 +507,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 176884}
   m_LocalRotation: {x: 0, y: .866025507, z: 0, w: .499999881}
-  m_LocalPosition: {x: -4, y: 4, z: 0}
+  m_LocalPosition: {x: -4, y: .600000024, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 432454}
@@ -789,21 +787,6 @@ Transform:
   - {fileID: 458166}
   m_Father: {fileID: 432588}
   m_RootOrder: 1
---- !u!54 &5417334
-Rigidbody:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 176884}
-  serializedVersion: 2
-  m_Mass: 100
-  m_Drag: 0
-  m_AngularDrag: 0
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 2
-  m_Constraints: 88
-  m_CollisionDetection: 1
 --- !u!95 &9556622
 Animator:
   serializedVersion: 3
@@ -832,24 +815,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a7d50fa0e4184ee78a62c0e9724d469, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
-  jumpForce: 10
+  actionSound: {fileID: 11400000, guid: 86d95eb16b3624816af1797fa4a756e6, type: 2}
+  dieSound: {fileID: 11400000, guid: b0743f137b7164776bffa7a9fb0ecd8d, type: 2}
+  speed: 4
+  jumpForce: 9
+  velocity: {x: 0, y: 0, z: 0}
   m_isGround: 0
   forceMode: 1
   dir: 1
---- !u!136 &13679298
-CapsuleCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 176884}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: .5
-  m_Height: 1.79999995
-  m_Direction: 1
-  m_Center: {x: 0, y: 1, z: 0}
 --- !u!137 &13746988
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
@@ -909,7 +882,7 @@ CharacterController:
   m_GameObject: {fileID: 176884}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Height: 1.79999995
   m_Radius: .5
@@ -924,7 +897,20 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: jumpForce
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: speed
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: dieSound
+      value: 
+      objectReference: {fileID: 11400000, guid: b0743f137b7164776bffa7a9fb0ecd8d,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 176884}

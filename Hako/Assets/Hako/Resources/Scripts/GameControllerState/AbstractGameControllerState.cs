@@ -33,6 +33,7 @@ public class AbstractGameControllerStateInspector : Editor{
 
 // namespace jigaX{
 public class AbstractGameControllerState : StateMachineBehaviour {
+	[SerializeField]protected Util.GameStates state;
 	[SerializeField]protected PrefabRefObj prefabRefObj;
 	protected Transform m_canvas;
 	protected Transform canvas{
@@ -49,12 +50,7 @@ public class AbstractGameControllerState : StateMachineBehaviour {
 	protected GameObject currentRootUIInstance{
 		get{
 			if( this.m_currentRootUIInstance == null ){
-				this.m_currentRootUIInstance = Instantiate( this.currentRootUIPrefab ) as GameObject;
-				this.m_currentRootUIInstance.transform.SetParent( this.canvas );
-				this.m_currentRootUIInstance.transform.localPosition = Vector3.zero;
-				this.m_currentRootUIInstance.transform.localScale = Vector3.one;
-				var r = this.m_currentRootUIInstance.GetComponent<RectTransform>();
-				r.sizeDelta = Vector2.zero;
+				this.m_currentRootUIInstance = Util.InstantiateWithParentForUI(this.currentRootUIPrefab );
 			}
 			return this.m_currentRootUIInstance;
 		}

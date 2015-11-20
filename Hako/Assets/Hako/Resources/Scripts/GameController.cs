@@ -33,7 +33,16 @@ public class GameControllerInspector : Editor{
 
 // namespace jigaX{
 public class GameController : Singleton<GameController> {
-	
+	jigaX.CameraDolly m_cameraDolly;
+	jigaX.CameraDolly cameraDolly{
+		get{
+			if( this.m_cameraDolly == null ) this.m_cameraDolly = Camera.main.GetComponent<jigaX.CameraDolly>();
+			return this.m_cameraDolly;
+		}
+		set{
+			this.m_cameraDolly = value;
+		}
+	}
 	Animator m_animator;
 	public Animator animator{
 		get{
@@ -44,6 +53,30 @@ public class GameController : Singleton<GameController> {
 			this.m_animator = value;
 		}
 	}
+	public GameObject playerPrefab;
+	public GameObject startingGroundPrefab;
+	[SerializeField]Vector3 playerInstancePosition;
+	public void ChangeStateAs( Util.GameStates _state ){
+		switch(_state){
+			case Util.GameStates.Title:
+				this.cameraDolly.GoToStartPosition();
+				CubePopper.Instance.gameObject.SetActive(false);
+			break;
+			case Util.GameStates.Main:
+				Util.InstantiateWithParent( this.startingGroundPrefab, null );
+				var g = Util.InstantiateWithParent( this.playerPrefab, null );
+				g.transform.position = this.playerInstancePosition;
+				this.cameraDolly.SetNewPlayer( g.transform );
+				CubePopper.Instance.gameObject.SetActive(true);
+			break;
+			case Util.GameStates.Result:
+				CubePopper.Instance.gameObject.SetActive(false);
+			break;
+		}
+	}
+	
+	
+	
 
 }
 

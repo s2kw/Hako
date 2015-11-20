@@ -67,7 +67,8 @@ public class PlayerController : ObservableMonoBehaviour {
 		}
 	}
 
-
+	public RandomSoundPlayer actionSound;
+	public RandomSoundPlayer dieSound;
 	[SerializeField]float speed;
 	[SerializeField]float jumpForce = 1f;
 	float m_rightVector;
@@ -80,42 +81,66 @@ public class PlayerController : ObservableMonoBehaviour {
 			this.m_rightVector = value;
 		}
 	}
+	public override void OnDestroy(){
+		this.dieSound.Play();
+		Singleton<GameController>.Instance.animator.SetTrigger("GameOver");
+
+		base.OnDestroy();
+
+		eventResources.Dispose();		
+	}
+	CompositeDisposable eventResources = new CompositeDisposable();
+	Vector3 startPosition;
 	// Use this for initialization
 	public override void Start () {
-
+		startPosition = this.transform.position;
 		var ArrowUpStream = UpdateAsObservable().Where( _ => Input.GetKeyUp( KeyCode.LeftArrow ) || Input.GetKeyUp( KeyCode.RightArrow ) );
 		ArrowUpStream.Subscribe( _=> {
 			this.rightVector = 0f;
-		});
+		}).AddTo(this.eventResources);
 
 		var rightDownStream = UpdateAsObservable().Where(_=> Input.GetKey(KeyCode.RightArrow) );
 		rightDownStream.Subscribe(_=>{
 			this.RunToRight();
-		});
+		}).AddTo(this.eventResources);
 		
 		var leftDownStream = UpdateAsObservable().Where(_=> Input.GetKey(KeyCode.LeftArrow) );
 		leftDownStream.Subscribe(_=>{
 			this.RunToLeft();
-		});
+		}).AddTo(this.eventResources);
 		
 		// 地面判定
         this.controller
             .ObserveEveryValueChanged( x => x.isGrounded )
             .Where( x => this.controller.isGrounded == true )
-            .Subscribe(x => this.isGround = x);	
+            .Subscribe(x => this.isGround = x).AddTo(this.eventResources);
+		
+		this.ObserveEveryValueChanged( x => x.distance )
+			.Where( _ => this.distance > this.previousDistance )
+			.Subscribe( x => {
+				this.previousDistance = this.distance;
+				Singleton<MainCanvas>.Instance.mainInstance.UpdateDistance( this.distance );
+			}).AddTo(this.eventResources);
+		
+		UpdateAsObservable()
+			.Subscribe(_=> this.distance = Vector3.Distance( this.transform.position, this.startPosition ) )
+			.AddTo( this.eventResources );
 		// jump
 		var SpaceDownStream = UpdateAsObservable().Where(_=> Input.GetKeyDown(KeyCode.Space) );
 		SpaceDownStream.Subscribe(_=>{
 			this.Jump();
-		});		
+		}).AddTo(this.eventResources);	
 
 		// 最後に移動処理
 		Observable.EveryUpdate()
 					.Subscribe( _=>{
 						this.Move();
-					});
-		
+					}).AddTo(this.eventResources);
 	}
+	
+	public float distance{ get;set; }
+	public float previousDistance{ get;set; }
+	
 	public override void OnCollisionEnter( Collision _col ){
 		base.OnCollisionEnter( _col );
 		Debug.Log(_col.gameObject.name,this);
@@ -128,6 +153,7 @@ public class PlayerController : ObservableMonoBehaviour {
 			
 		this.velocity.y = this.jumpForce;
 		this.isGround = false;
+		this.actionSound.Play();
 	}
 	public void Move(){
 		var v = Vector3.right * this.rightVector;
@@ -135,7 +161,8 @@ public class PlayerController : ObservableMonoBehaviour {
 		if( !this.isGround){
 			this.velocity.y += gravity * Time.deltaTime;
 		}
-		this.controller.Move( this.velocity * Time.deltaTime );
+		if( this.controller != null )
+			this.controller.Move( this.velocity * Time.deltaTime );
 	}
 	
 	[SerializeField]bool m_isGround;

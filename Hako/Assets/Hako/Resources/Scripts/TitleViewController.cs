@@ -34,10 +34,12 @@ public class TitleViewControllerInspector : Editor{
 // namespace jigaX{
 public class TitleViewController : MonoBehaviour {
 
-	void Awake(){
-	
+	public GameObject UIPlayerCharacteSelectorController;
+	public RandomSoundPlayer actionSound;
+	void OnEnable(){
+		this.UIPlayerCharacteSelectorController.SetActive(true);
+		this.actionSound.Play();
 	}
-
 	// Use this for initialization
 	void Start () {
 		Singleton<MainCanvas>.Instance.titleInstance = this;

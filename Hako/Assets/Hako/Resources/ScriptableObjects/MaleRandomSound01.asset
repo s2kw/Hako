@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03441bc89a12b42b6955f0d6c3e96ecd, type: 3}
+  m_Name: MaleRandomSound01
+  m_EditorClassIdentifier: 
+  sounds:
+  - {fileID: 8300000, guid: 6866d81cc663b4f4db3847d7cbf04f70, type: 3}
+  - {fileID: 8300000, guid: 7015ed67a7148e04384204474efb4fba, type: 3}
+  - {fileID: 8300000, guid: 395ddbc5c829f07438657d77f8079bb9, type: 3}
+  - {fileID: 8300000, guid: a4ca9ce2cf6d00a429a123e6544ce71f, type: 3}
+  - {fileID: 8300000, guid: 6e36940f932ab4b4295bbc1c7b7b4573, type: 3}
+  - {fileID: 8300000, guid: 99a7e68d647063548b7f16450df3ac9c, type: 3}
+  volume: 1

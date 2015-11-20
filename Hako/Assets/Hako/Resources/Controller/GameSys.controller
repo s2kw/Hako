@@ -44,6 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 205acd11e324c4771845cc1283a3017f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 0
   prefabRefObj: {fileID: 11400000, guid: 2a728625b7bb54973afb6b4f52f324bf, type: 2}
   currentRootUIPrefab: {fileID: 100618, guid: fcbf74badfc8b425e95a06cfbd035dec, type: 2}
   m_currentRootUIInstance: {fileID: 0}
@@ -58,6 +59,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 205acd11e324c4771845cc1283a3017f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 1
   prefabRefObj: {fileID: 11400000, guid: 2a728625b7bb54973afb6b4f52f324bf, type: 2}
   currentRootUIPrefab: {fileID: 129062, guid: 7c0955228ec754e0ba210b43ee8d3b67, type: 2}
   m_currentRootUIInstance: {fileID: 0}
@@ -72,6 +74,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 205acd11e324c4771845cc1283a3017f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 2
   prefabRefObj: {fileID: 11400000, guid: 2a728625b7bb54973afb6b4f52f324bf, type: 2}
   currentRootUIPrefab: {fileID: 111104, guid: f546f73c84793481083f57064778ee51, type: 2}
   m_currentRootUIInstance: {fileID: 0}
@@ -90,7 +93,7 @@ AnimatorStateTransition:
   serializedVersion: 3
   m_TransitionDuration: .100000001
   m_TransitionOffset: 0
-  m_ExitTime: .899999976
+  m_ExitTime: 10
   m_HasExitTime: 1
   m_HasFixedDuration: 1
   m_InterruptionSource: 0

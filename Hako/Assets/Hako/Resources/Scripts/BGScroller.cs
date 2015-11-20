@@ -36,11 +36,6 @@ public class BGScroller : MonoBehaviour {
 
 	public List<BGScrollChild> children;
 
-	void Awake(){
-	
-	}
-
-	// Use this for initialization
 	void Start () {
 		var i = 0;
 		foreach( var c in this.children ){
@@ -54,7 +49,7 @@ public class BGScroller : MonoBehaviour {
 		this.children.Remove( _child );
 		this.children.Add( _child );
 		var top = this.children[0].transform.localPosition;
-		
+		//_child.alreadyVisible = false;
 		_child.transform.localPosition = new Vector3( top.x + offsetX, top.y,top.z );
 	}
 	
@@ -62,25 +57,6 @@ public class BGScroller : MonoBehaviour {
 	void Update () {
 	
 	}
-	// [SerializeField]float margin = 0.1f; //マージン(画面外に出てどれくらい離れたら消えるか)を指定
-	// [SerializeField]float negativeMargin;
-	// [SerializeField]float positiveMargin;
-    // bool isOutOfScreen()
-    // {
-    //     Vector3 positionInScreen = Camera.main.WorldToViewportPoint(transform.position);
-    //     positionInScreen.z = transform.position.z;
- 
-    //     if (positionInScreen.x <= negativeMargin ||
-    //         positionInScreen.x >= positiveMargin ||
-    //         positionInScreen.y <= negativeMargin ||
-    //         positionInScreen.y >= positiveMargin)
-    //     {
-    //         return true;
-    //     } else {
-    //         return false;
-    //     }
-    // }
-
 }
 
 // } // namespace

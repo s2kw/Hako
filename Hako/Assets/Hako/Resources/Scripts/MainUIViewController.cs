@@ -38,7 +38,7 @@ public class MainUIViewController : MonoBehaviour {
 	[SerializeField] UnityEngine.UI.Text boxCounter;
 
 	public void UpdateDistance( float _val ){
-		this.distanceMeter.text = _val.ToString() + " m";
+		this.distanceMeter.text = Mathf.Floor(_val).ToString() + " m";
 	}
 	
 	public void UpdateBoxCount( int _val ){

@@ -33,10 +33,12 @@ public class GameStateInspector : Editor{
 
 // namespace jigaX{
 public class GameState : AbstractGameControllerState {
+	
 	public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex){
 		if( this.currentRootUIInstance == null )
 			Debug.Log("this.currentRootUIInstance is null");
 		this.currentRootUIInstance.SetActive(true);
+		Singleton<GameController>.Instance.ChangeStateAs( this.state );
 	}
 	//public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex){ Debug.Log( this.GetType().Name + ".OnStateUpdate ", this ); }
 	public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex){

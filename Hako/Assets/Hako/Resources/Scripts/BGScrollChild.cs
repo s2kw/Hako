@@ -36,7 +36,7 @@ public class BGScrollChild : MonoBehaviour {
 
 	public delegate void EventHandler(BGScrollChild child);
 	public EventHandler OnOutCamera;
-	[SerializeField]bool alreadyVisible = false;
+	bool alreadyVisible = false;
 	
 	void Awake(){
 		this.alreadyVisible = false;

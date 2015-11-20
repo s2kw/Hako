@@ -42,8 +42,13 @@ public class ScriptableObjCreator : Editor {
     }
     
     // RandomSound
-	[MenuItem("ScriptableObj/Create/PrefabRefObj")]
+	[MenuItem("ScriptableObj/Create/RandomSoundObject")]
 	static void CreateRandomSoundAsset() {
+		ScriptableObjCreator.CreateAsset<RandomSoundPlayer>();
+	}
+
+	[MenuItem("ScriptableObj/Create/PrefabRefObj")]
+	static void CreatePrefabRefdAsset() {
 		ScriptableObjCreator.CreateAsset<PrefabRefObj>();
 	}
 
