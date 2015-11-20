@@ -5,7 +5,7 @@
 	by Kunihiro Sasakawa as s2kw@jigax.jp
 
 
-MainCanvas.cs
+TitleViewController.cs
 
 Date:
 Description:
@@ -20,23 +20,33 @@ using System.Collections.Generic;
 //using UniRx; using UnityEngine.UI;
 # if UNITY_EDITOR
 using UnityEditor;
-[CustomEditor( typeof( MainCanvas ) )]
-public class MainCanvasInspector : Editor{
+[CustomEditor( typeof( TitleViewController ) )]
+public class TitleViewControllerInspector : Editor{
 	public override void OnInspectorGUI()
 	{
 		DrawDefaultInspector();
 		return;
-		var script = target as MainCanvas;
+		var script = target as TitleViewController;
 	}
 }
 # endif
 
 // namespace jigaX{
-public class MainCanvas : Singleton<MainCanvas> {
-	public TitleViewController titleInstance;
-	public MainUIViewController mainInstance;
-	public ResultViewController resultInstance;
+public class TitleViewController : MonoBehaviour {
+
+	void Awake(){
 	
+	}
+
+	// Use this for initialization
+	void Start () {
+		Singleton<MainCanvas>.Instance.titleInstance = this;
+	}
+	
+	// Update is called once per frame
+	void Update () {
+	
+	}
 }
 
 // } // namespace
