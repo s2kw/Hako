@@ -51,22 +51,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &130548
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 468994}
-  - 114: {fileID: 11463842}
-  m_Layer: 0
-  m_Name: CubePopper
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &134192
 GameObject:
   m_ObjectHideFlags: 1
@@ -390,18 +374,6 @@ Transform:
   - {fileID: 454318}
   m_Father: {fileID: 496920}
   m_RootOrder: 2
---- !u!4 &468994
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 130548}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6, y: -3.9000001, z: 10}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 496920}
-  m_RootOrder: 3
 --- !u!4 &473114
 Transform:
   m_ObjectHideFlags: 1
@@ -457,13 +429,12 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 142322}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.9000001, z: -10}
+  m_LocalPosition: {x: -4.5, y: 3.9000001, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 466048}
   - {fileID: 403828}
   - {fileID: 467588}
-  - {fileID: 468994}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &498100
@@ -667,22 +638,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 658b2164e799545df8e5bbb208ddb053, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &11463842
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 130548}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3db35864183f04aac80dd19d52b56af8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  randomRangeHighest: 5
-  randomRangeLowest: 0
-  cubePrefabs:
-  - {fileID: 104500, guid: d109337695c264b4a8a6a408e65ace5a, type: 2}
-  intervalSec: 1
 --- !u!114 &11465032
 MonoBehaviour:
   m_ObjectHideFlags: 1

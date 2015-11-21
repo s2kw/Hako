@@ -140,14 +140,9 @@ public class PlayerController : ObservableMonoBehaviour {
 	
 	public float distance{ get;set; }
 	public float previousDistance{ get;set; }
-	
-	public override void OnCollisionEnter( Collision _col ){
-		base.OnCollisionEnter( _col );
-		Debug.Log(_col.gameObject.name,this);
-		this.isGround = true;
-	}
+	[SerializeField] float forceObNugget;
 	float gravity = Physics.gravity.y;
-	[SerializeField]Vector3 velocity;
+	public Vector3 velocity;
 	void Jump(){
 		if (! this.isGround ) return;
 			
@@ -166,7 +161,7 @@ public class PlayerController : ObservableMonoBehaviour {
 	}
 	
 	[SerializeField]bool m_isGround;
-	bool isGround{
+	public bool isGround{
 		get{
 			return this.m_isGround;
 		}

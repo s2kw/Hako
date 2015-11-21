@@ -68,6 +68,8 @@ public class GameController : Singleton<GameController> {
 				g.transform.position = this.playerInstancePosition;
 				this.cameraDolly.SetNewPlayer( g.transform );
 				CubePopper.Instance.gameObject.SetActive(true);
+				CubePopper.Instance.ResetPosition();
+				CubePopper.Instance.gameObject.GetComponent<Mover>().ResetSpeed();
 			break;
 			case Util.GameStates.Result:
 				CubePopper.Instance.gameObject.SetActive(false);

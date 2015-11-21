@@ -42,13 +42,13 @@ public class BGScrollChild : MonoBehaviour {
 		this.alreadyVisible = false;
 	}
 	void OnBecameInvisible(){
-		Debug.Log("OnBecameInvisible " + this.gameObject.name ,this );
+//		Debug.Log("OnBecameInvisible " + this.gameObject.name ,this );
 		if( this.alreadyVisible && this.OnOutCamera != null ){
 			this.OnOutCamera( this );
 		}
 	}
 	void OnBecameVisible(){
-		Debug.Log("OnBecameVisible " + this.gameObject.name ,this );
+//		Debug.Log("OnBecameVisible " + this.gameObject.name ,this );
 		this.alreadyVisible = true;		
 	}
 	

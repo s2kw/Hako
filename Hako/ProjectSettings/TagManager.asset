@@ -7,6 +7,7 @@ TagManager:
   - MainCanvas
   - ground
   - HealthBar
+  - Nugget
   layers:
   - Default
   - TransparentFX

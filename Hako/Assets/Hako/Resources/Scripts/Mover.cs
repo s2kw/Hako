@@ -35,16 +35,30 @@ public class MoverInspector : Editor{
 public class Mover : ObservableMonoBehaviour {
 	CompositeDisposable eventResources = new CompositeDisposable();
 	[SerializeField] Vector3 moveVector;
+	Vector3 startVector;
+	[SerializeField] bool isIncrease = false;
+	[SerializeField] float max = 0.1f;
 	// Use this for initialization
 	public override void Start () {
 		base.Start();
-		
+		this.startVector = this.moveVector;
 		Observable.EveryUpdate().Subscribe(_=>{
-			this.transform.localPosition += this.moveVector;
+			this.Move();
+			this.Increase();
 		}).AddTo(this.eventResources);
 		
 	}
-	
+	public void ResetSpeed(){
+		this.moveVector = this.startVector;
+	}
+	void Move(){
+		this.transform.localPosition += this.moveVector;
+	}
+	void Increase(){
+		if( this.isIncrease && ( Mathf.Min( this.max, this.moveVector.magnitude ) < this.max ) )
+			this.moveVector *= 1.001f;
+		
+	}
 	public override void OnDestroy(){
 		base.OnDestroy();
 		eventResources.Dispose();

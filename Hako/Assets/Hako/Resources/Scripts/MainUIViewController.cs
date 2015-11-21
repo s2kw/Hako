@@ -17,7 +17,7 @@ Description:
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-//using UniRx; using UnityEngine.UI;
+using UniRx; using UnityEngine.UI;
 # if UNITY_EDITOR
 using UnityEditor;
 [CustomEditor( typeof( MainUIViewController ) )]
@@ -32,11 +32,15 @@ public class MainUIViewControllerInspector : Editor{
 # endif
 
 // namespace jigaX{
-public class MainUIViewController : MonoBehaviour {
+public class MainUIViewController : ObservableMonoBehaviour {
 
 	[SerializeField] UnityEngine.UI.Text distanceMeter;
 	[SerializeField] UnityEngine.UI.Text boxCounter;
 
+	[SerializeField] Renderer sampleCube;
+	public Material currentMaterial;
+	[SerializeField] List<Material> materials;
+	[SerializeField] float intervalSec  = 5f ; 
 	public void UpdateDistance( float _val ){
 		this.distanceMeter.text = Mathf.Floor(_val).ToString() + " m";
 	}
@@ -45,19 +49,29 @@ public class MainUIViewController : MonoBehaviour {
 		this.boxCounter.text = _val.ToString() + "ハコ";
 	}
 
-	void Awake(){
-	
-	}
-
+	CompositeDisposable eventResources = new CompositeDisposable();
 	// Use this for initialization
-	void Start () {
+	public override void Start () {
+		base.Start();
 		Singleton<MainCanvas>.Instance.mainInstance = this;
+		
+		Observable.Interval( System.TimeSpan.FromSeconds(this.intervalSec ) )
+			.TakeUntilDisable(this)
+			.Subscribe(_=>{
+				this.MaterialChange();
+			}).AddTo( this.eventResources );
+	}
+	public override void OnDestroy(){
+		base.OnDestroy();
+		this.eventResources.Dispose();
 	}
 	
-	// Update is called once per frame
-	void Update () {
-	
+	public void MaterialChange(){
+		var r = UnityEngine.Random.Range(0, this.materials.Count );
+		var targetMaterial = this.materials[r];
+		this.sampleCube.material = targetMaterial;
 	}
+	
 }
 
 // } // namespace

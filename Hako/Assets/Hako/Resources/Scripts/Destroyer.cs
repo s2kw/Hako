@@ -36,7 +36,6 @@ public class Destroyer : MonoBehaviour {
 
 
 	void OnTriggerEnter( Collider _col ){
-		Debug.Log(_col.gameObject.name + " enter", _col.gameObject);
 		Destroy( _col.gameObject );
 	}
 }

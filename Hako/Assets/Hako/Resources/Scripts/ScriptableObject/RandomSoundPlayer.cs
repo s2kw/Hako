@@ -22,7 +22,7 @@ public class RandomSoundPlayer : jigaX.Model {
 	int num = 0;
 	public float volume = 1f;
 	public void Play(){
-		//if( num >= sounds.Count ) num = 0;
+		if( ! Application.isPlaying ) return;
 		num = Random.Range( 0, this.sounds.Count );
 		Singleton<SoundManager>.Instance.PlaySE( this.sounds[ num ], this.volume );
 		num ++;
