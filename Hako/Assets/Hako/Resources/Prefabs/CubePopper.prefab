@@ -372,7 +372,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 102568}
-  m_LocalRotation: {x: 0, y: .707106829, z: 0, w: .707106709}
+  m_LocalRotation: {x: 0, y: -.707106829, z: 0, w: .707106709}
   m_LocalPosition: {x: 0, y: -2.50999999, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
@@ -496,7 +496,7 @@ Animation:
   m_GameObject: {fileID: 102568}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400010, guid: 9cfe8df37d2e7604fa1cd71d4ba5c155, type: 3}
+  m_Animation: {fileID: 7400004, guid: 9cfe8df37d2e7604fa1cd71d4ba5c155, type: 3}
   m_Animations:
   - {fileID: 7400000, guid: 9cfe8df37d2e7604fa1cd71d4ba5c155, type: 3}
   - {fileID: 7400002, guid: 9cfe8df37d2e7604fa1cd71d4ba5c155, type: 3}
@@ -504,6 +504,7 @@ Animation:
   - {fileID: 7400006, guid: 9cfe8df37d2e7604fa1cd71d4ba5c155, type: 3}
   - {fileID: 7400008, guid: 9cfe8df37d2e7604fa1cd71d4ba5c155, type: 3}
   - {fileID: 7400010, guid: 9cfe8df37d2e7604fa1cd71d4ba5c155, type: 3}
+  - {fileID: 7400012, guid: 9cfe8df37d2e7604fa1cd71d4ba5c155, type: 3}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -532,7 +533,7 @@ MonoBehaviour:
   - {fileID: 197250, guid: afe417f7cfcfc4aa9b23041bc906aaa3, type: 2}
   - {fileID: 197250, guid: 4b75eeb8b97784bce90b5206d5c72e43, type: 2}
   - {fileID: 137714, guid: be1c127ead8a2467d9d3ac52cff22a98, type: 2}
-  intervalSec: 1
+  intervalSec: .800000012
   attackTarget: {fileID: 454810}
 --- !u!114 &11443244
 MonoBehaviour:

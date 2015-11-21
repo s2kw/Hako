@@ -87,7 +87,7 @@ public class PlayerController : ObservableMonoBehaviour {
 
 		base.OnDestroy();
 
-		eventResources.Dispose();		
+		eventResources.Dispose();	
 	}
 	CompositeDisposable eventResources = new CompositeDisposable();
 	Vector3 startPosition;
@@ -120,11 +120,20 @@ public class PlayerController : ObservableMonoBehaviour {
 			.Subscribe( x => {
 				this.previousDistance = this.distance;
 				Singleton<MainCanvas>.Instance.mainInstance.UpdateDistance( this.distance );
+				Singleton<GameController>.Instance.highScore = this.distance;
 			}).AddTo(this.eventResources);
 		
 		UpdateAsObservable()
-			.Subscribe(_=> this.distance = Vector3.Distance( this.transform.position, this.startPosition ) )
+			.Subscribe(_=> {
+				this.distance = Vector3.Distance( this.transform.position, this.startPosition );
+				this.additionalPower /= 1.01f;
+			} )
 			.AddTo( this.eventResources );
+		
+		OnCollisionExitAsObservable().Subscribe(_=>{
+			this.isGround = false;
+		}).AddTo(this.eventResources);
+		
 		// jump
 		var SpaceDownStream = UpdateAsObservable().Where(_=> Input.GetKeyDown(KeyCode.Space) );
 		SpaceDownStream.Subscribe(_=>{
@@ -143,6 +152,7 @@ public class PlayerController : ObservableMonoBehaviour {
 	[SerializeField] float forceObNugget;
 	float gravity = Physics.gravity.y;
 	public Vector3 velocity;
+	public Vector3 additionalPower;
 	void Jump(){
 		if (! this.isGround ) return;
 			
@@ -156,8 +166,9 @@ public class PlayerController : ObservableMonoBehaviour {
 		if( !this.isGround){
 			this.velocity.y += gravity * Time.deltaTime;
 		}
+		var p = this.velocity + this.additionalPower;
 		if( this.controller != null )
-			this.controller.Move( this.velocity * Time.deltaTime );
+			this.controller.Move( p * Time.deltaTime );
 	}
 	
 	[SerializeField]bool m_isGround;
@@ -168,6 +179,11 @@ public class PlayerController : ObservableMonoBehaviour {
 		set{
 			this.animator.SetBool("isGround",value);
 			this.m_isGround = value;
+			// 接地したのでエネルギーを消化
+			if(value){
+				this.additionalPower = Vector3.zero;
+				this.velocity.y = 0f;
+			}
 		}
 	}
 	[SerializeField] ForceMode forceMode;

@@ -3,8 +3,45 @@ guid: 9cfe8df37d2e7604fa1cd71d4ba5c155
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
+    100000: Armature
+    100002: Foot_L
+    100004: Foot_R
+    100006: Head
+    100008: Leg_L
+    100010: Leg_R
+    100012: Master
+    100014: //RootNode
+    100016: NuggetMesh
+    100018: Spine1
+    100020: Spine2
+    100022: Tail
+    100024: Thigh_L
+    100026: Thigh_R
+    400000: Armature
+    400002: Foot_L
+    400004: Foot_R
+    400006: Head
+    400008: Leg_L
+    400010: Leg_R
+    400012: Master
+    400014: //RootNode
+    400016: NuggetMesh
+    400018: Spine1
+    400020: Spine2
+    400022: Tail
+    400024: Thigh_L
+    400026: Thigh_R
     4300000: Cube
     4300002: NuggetMesh
+    7400000: Idle
+    7400002: Jump
+    7400004: Peck
+    7400006: Run
+    7400008: Run_001
+    7400010: Walk
+    7400012: ReverseWalk
+    11100000: //RootNode
+    13700000: NuggetMesh
   materials:
     importMaterials: 1
     materialName: 3
@@ -24,7 +61,385 @@ ModelImporter:
     animationScaleError: .5
     animationWrapMode: 2
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Idle
+      takeName: Idle
+      firstFrame: 0
+      lastFrame: 119
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Master
+        weight: 1
+      - path: Armature/Master/Spine1
+        weight: 1
+      - path: Armature/Master/Spine1/Spine2
+        weight: 1
+      - path: Armature/Master/Spine1/Spine2/Head
+        weight: 1
+      - path: Armature/Master/Spine1/Spine2/Tail
+        weight: 1
+      - path: Armature/Master/Spine1/Thigh_L
+        weight: 1
+      - path: Armature/Master/Spine1/Thigh_L/Leg_L
+        weight: 1
+      - path: Armature/Master/Spine1/Thigh_L/Leg_L/Foot_L
+        weight: 1
+      - path: Armature/Master/Spine1/Thigh_R
+        weight: 1
+      - path: Armature/Master/Spine1/Thigh_R/Leg_R
+        weight: 1
+      - path: Armature/Master/Spine1/Thigh_R/Leg_R/Foot_R
+        weight: 1
+      - path: NuggetMesh
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Jump
+      takeName: Jump
+      firstFrame: 0
+      lastFrame: 14
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Master
+        weight: 1
+      - path: Armature/Master/Spine1
+        weight: 1
+      - path: Armature/Master/Spine1/Spine2
+        weight: 1
+      - path: Armature/Master/Spine1/Spine2/Head
+        weight: 1
+      - path: Armature/Master/Spine1/Spine2/Tail
+        weight: 1
+      - path: Armature/Master/Spine1/Thigh_L
+        weight: 1
+      - path: Armature/Master/Spine1/Thigh_L/Leg_L
+        weight: 1
+      - path: Armature/Master/Spine1/Thigh_L/Leg_L/Foot_L
+        weight: 1
+      - path: Armature/Master/Spine1/Thigh_R
+        weight: 1
+      - path: Armature/Master/Spine1/Thigh_R/Leg_R
+        weight: 1
+      - path: Armature/Master/Spine1/Thigh_R/Leg_R/Foot_R
+        weight: 1
+      - path: NuggetMesh
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Peck
+      takeName: Peck
+      firstFrame: 0
+      lastFrame: 14
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Master
+        weight: 1
+      - path: Armature/Master/Spine1
+        weight: 1
+      - path: Armature/Master/Spine1/Spine2
+        weight: 1
+      - path: Armature/Master/Spine1/Spine2/Head
+        weight: 1
+      - path: Armature/Master/Spine1/Spine2/Tail
+        weight: 1
+      - path: Armature/Master/Spine1/Thigh_L
+        weight: 1
+      - path: Armature/Master/Spine1/Thigh_L/Leg_L
+        weight: 1
+      - path: Armature/Master/Spine1/Thigh_L/Leg_L/Foot_L
+        weight: 1
+      - path: Armature/Master/Spine1/Thigh_R
+        weight: 1
+      - path: Armature/Master/Spine1/Thigh_R/Leg_R
+        weight: 1
+      - path: Armature/Master/Spine1/Thigh_R/Leg_R/Foot_R
+        weight: 1
+      - path: NuggetMesh
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Run
+      takeName: Run
+      firstFrame: 0
+      lastFrame: 17
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Master
+        weight: 1
+      - path: Armature/Master/Spine1
+        weight: 1
+      - path: Armature/Master/Spine1/Spine2
+        weight: 1
+      - path: Armature/Master/Spine1/Spine2/Head
+        weight: 1
+      - path: Armature/Master/Spine1/Spine2/Tail
+        weight: 1
+      - path: Armature/Master/Spine1/Thigh_L
+        weight: 1
+      - path: Armature/Master/Spine1/Thigh_L/Leg_L
+        weight: 1
+      - path: Armature/Master/Spine1/Thigh_L/Leg_L/Foot_L
+        weight: 1
+      - path: Armature/Master/Spine1/Thigh_R
+        weight: 1
+      - path: Armature/Master/Spine1/Thigh_R/Leg_R
+        weight: 1
+      - path: Armature/Master/Spine1/Thigh_R/Leg_R/Foot_R
+        weight: 1
+      - path: NuggetMesh
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Run_001
+      takeName: Run_001
+      firstFrame: 0
+      lastFrame: 17
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Master
+        weight: 1
+      - path: Armature/Master/Spine1
+        weight: 1
+      - path: Armature/Master/Spine1/Spine2
+        weight: 1
+      - path: Armature/Master/Spine1/Spine2/Head
+        weight: 1
+      - path: Armature/Master/Spine1/Spine2/Tail
+        weight: 1
+      - path: Armature/Master/Spine1/Thigh_L
+        weight: 1
+      - path: Armature/Master/Spine1/Thigh_L/Leg_L
+        weight: 1
+      - path: Armature/Master/Spine1/Thigh_L/Leg_L/Foot_L
+        weight: 1
+      - path: Armature/Master/Spine1/Thigh_R
+        weight: 1
+      - path: Armature/Master/Spine1/Thigh_R/Leg_R
+        weight: 1
+      - path: Armature/Master/Spine1/Thigh_R/Leg_R/Foot_R
+        weight: 1
+      - path: NuggetMesh
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Walk
+      takeName: Walk
+      firstFrame: 0
+      lastFrame: 29
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Master
+        weight: 1
+      - path: Armature/Master/Spine1
+        weight: 1
+      - path: Armature/Master/Spine1/Spine2
+        weight: 1
+      - path: Armature/Master/Spine1/Spine2/Head
+        weight: 1
+      - path: Armature/Master/Spine1/Spine2/Tail
+        weight: 1
+      - path: Armature/Master/Spine1/Thigh_L
+        weight: 1
+      - path: Armature/Master/Spine1/Thigh_L/Leg_L
+        weight: 1
+      - path: Armature/Master/Spine1/Thigh_L/Leg_L/Foot_L
+        weight: 1
+      - path: Armature/Master/Spine1/Thigh_R
+        weight: 1
+      - path: Armature/Master/Spine1/Thigh_R/Leg_R
+        weight: 1
+      - path: Armature/Master/Spine1/Thigh_R/Leg_R/Foot_R
+        weight: 1
+      - path: NuggetMesh
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: ReverseWalk
+      takeName: Walk
+      firstFrame: 0
+      lastFrame: 29
+      wrapMode: 8
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Master
+        weight: 1
+      - path: Armature/Master/Spine1
+        weight: 1
+      - path: Armature/Master/Spine1/Spine2
+        weight: 1
+      - path: Armature/Master/Spine1/Spine2/Head
+        weight: 1
+      - path: Armature/Master/Spine1/Spine2/Tail
+        weight: 1
+      - path: Armature/Master/Spine1/Thigh_L
+        weight: 1
+      - path: Armature/Master/Spine1/Thigh_L/Leg_L
+        weight: 1
+      - path: Armature/Master/Spine1/Thigh_L/Leg_L/Foot_L
+        weight: 1
+      - path: Armature/Master/Spine1/Thigh_R
+        weight: 1
+      - path: Armature/Master/Spine1/Thigh_R/Leg_R
+        weight: 1
+      - path: Armature/Master/Spine1/Thigh_R/Leg_R/Foot_R
+        weight: 1
+      - path: NuggetMesh
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
     isReadable: 1
   meshes:
     lODScreenPercentages: []

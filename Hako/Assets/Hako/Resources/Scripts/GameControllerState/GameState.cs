@@ -38,6 +38,7 @@ public class GameState : AbstractGameControllerState {
 		if( this.currentRootUIInstance == null )
 			Debug.Log("this.currentRootUIInstance is null");
 		this.currentRootUIInstance.SetActive(true);
+		
 		Singleton<GameController>.Instance.ChangeStateAs( this.state );
 	}
 	//public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex){ Debug.Log( this.GetType().Name + ".OnStateUpdate ", this ); }

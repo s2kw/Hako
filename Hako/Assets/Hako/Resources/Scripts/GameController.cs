@@ -55,14 +55,31 @@ public class GameController : Singleton<GameController> {
 	}
 	public GameObject playerPrefab;
 	public GameObject startingGroundPrefab;
+	
+	float m_highScore;
+	public float highScore{
+		get{
+			return this.m_highScore;
+		}
+		set{
+			if (this.m_highScore < value ){
+				this.m_highScore = value;
+			}
+		}
+	}
 	[SerializeField]Vector3 playerInstancePosition;
 	public void ChangeStateAs( Util.GameStates _state ){
+		StartCoroutine( this.DelayWithChangeState(_state) );
+	}
+	IEnumerator DelayWithChangeState( Util.GameStates _state ){
+		yield return new WaitForSeconds(0.1f);
 		switch(_state){
 			case Util.GameStates.Title:
 				this.cameraDolly.GoToStartPosition();
 				CubePopper.Instance.gameObject.SetActive(false);
 			break;
 			case Util.GameStates.Main:
+				this.m_highScore = 0f;
 				Util.InstantiateWithParent( this.startingGroundPrefab, null );
 				var g = Util.InstantiateWithParent( this.playerPrefab, null );
 				g.transform.position = this.playerInstancePosition;
@@ -73,10 +90,10 @@ public class GameController : Singleton<GameController> {
 			break;
 			case Util.GameStates.Result:
 				CubePopper.Instance.gameObject.SetActive(false);
+				Singleton<MainCanvas>.Instance.resultInstance.SetNewScore( this.highScore );
 			break;
-		}
+		}		
 	}
-	
 	
 	
 

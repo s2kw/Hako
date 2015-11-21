@@ -51,8 +51,14 @@ public class NuggetBehaviour : ObservableMonoBehaviour {
 			
 			if( x.gameObject.tag != "Player" ) return;
 			var p = x.gameObject.GetComponent<PlayerController>();
-			p.velocity += ( Vector3.up + Vector3.left ) * 5f;
+			if( p.isGround == false ) return;
+			p.additionalPower = ( Vector3.up ) * 20f;
+			p.additionalPower += Vector3.left * 10f;
 			p.isGround = false;
+			p.dieSound.Play();
+			
+			var m = this.transform.parent.gameObject.GetComponent<Mover>();
+			m.max += m.max * 0.04f;
 		}).AddTo(this.eventResources);
 		
 		

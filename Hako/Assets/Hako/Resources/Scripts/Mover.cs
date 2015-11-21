@@ -36,12 +36,14 @@ public class Mover : ObservableMonoBehaviour {
 	CompositeDisposable eventResources = new CompositeDisposable();
 	[SerializeField] Vector3 moveVector;
 	Vector3 startVector;
-	[SerializeField] bool isIncrease = false;
-	[SerializeField] float max = 0.1f;
+	public bool isIncrease = false;
+	public float max = 0.1f;
+	float defaultMax;
 	// Use this for initialization
 	public override void Start () {
 		base.Start();
 		this.startVector = this.moveVector;
+		this.defaultMax = this.max;
 		Observable.EveryUpdate().Subscribe(_=>{
 			this.Move();
 			this.Increase();
@@ -50,6 +52,7 @@ public class Mover : ObservableMonoBehaviour {
 	}
 	public void ResetSpeed(){
 		this.moveVector = this.startVector;
+		this.max = this.defaultMax;
 	}
 	void Move(){
 		this.transform.localPosition += this.moveVector;

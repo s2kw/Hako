@@ -34,18 +34,18 @@ public class ResultViewControllerInspector : Editor{
 // namespace jigaX{
 public class ResultViewController : MonoBehaviour {
 
-	void Awake(){
-	
-	}
-
 	// Use this for initialization
 	void Start () {
 		Singleton<MainCanvas>.Instance.resultInstance = this;
 	}
+	[SerializeField]RandomSoundPlayer gameOverSound;
+	void OnEnable(){
+		this.gameOverSound.Play();
+	}
 	
-	// Update is called once per frame
-	void Update () {
-	
+	[SerializeField] UnityEngine.UI.Text score;
+	public void SetNewScore( float _score ){
+		this.score.text = "あなたは\n" + Mathf.Floor(_score).ToString() + " m \nナゲットくんを追いかけました！";
 	}
 }
 

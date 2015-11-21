@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: 0
-  prefabRefObj: {fileID: 11400000, guid: 2a728625b7bb54973afb6b4f52f324bf, type: 2}
+  prefabRefObj: {fileID: 0}
   currentRootUIPrefab: {fileID: 100618, guid: fcbf74badfc8b425e95a06cfbd035dec, type: 2}
   m_currentRootUIInstance: {fileID: 0}
 --- !u!114 &11413760
@@ -60,7 +60,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: 1
-  prefabRefObj: {fileID: 11400000, guid: 2a728625b7bb54973afb6b4f52f324bf, type: 2}
+  prefabRefObj: {fileID: 0}
   currentRootUIPrefab: {fileID: 129062, guid: 7c0955228ec754e0ba210b43ee8d3b67, type: 2}
   m_currentRootUIInstance: {fileID: 0}
 --- !u!114 &11424274
@@ -75,7 +75,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: 2
-  prefabRefObj: {fileID: 11400000, guid: 2a728625b7bb54973afb6b4f52f324bf, type: 2}
+  prefabRefObj: {fileID: 0}
   currentRootUIPrefab: {fileID: 111104, guid: f546f73c84793481083f57064778ee51, type: 2}
   m_currentRootUIInstance: {fileID: 0}
 --- !u!1101 &110136460

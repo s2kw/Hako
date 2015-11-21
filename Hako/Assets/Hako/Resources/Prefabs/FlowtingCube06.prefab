@@ -102,7 +102,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9873b6a8069d3474fbce0d5f02665cfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveVector: {x: -.0299999993, y: 0, z: 0}
+  moveVector: {x: -.0599999987, y: 0, z: 0}
+  isIncrease: 0
+  max: .100000001
 --- !u!114 &11418780
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -123,7 +125,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: moveVector.x
+      value: -.0599999987
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 197250}
